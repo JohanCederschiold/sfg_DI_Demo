@@ -1,6 +1,7 @@
 package se.jpdc.didemo.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import se.jpdc.didemo.services.GreetingService;
 
@@ -14,6 +15,7 @@ public class SetterInjectedController {
     }
 
     @Autowired
+    @Qualifier("setterGreetingServiceImpl")
     public void setGreetingService(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
