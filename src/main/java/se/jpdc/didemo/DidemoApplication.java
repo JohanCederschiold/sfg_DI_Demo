@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import se.jpdc.didemo.controllers.ConstructorInjectedController;
+import se.jpdc.didemo.controllers.MyController;
 import se.jpdc.didemo.controllers.PropertyInjectedController;
 import se.jpdc.didemo.controllers.SetterInjectedController;
 import se.jpdc.didemo.services.GreetingService;
@@ -17,6 +18,9 @@ public class DidemoApplication {
 
 
         ApplicationContext ctx = SpringApplication.run(DidemoApplication.class, args);
+
+
+        System.out.println(ctx.getBean(MyController.class).hello());
         System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
         System.out.println(ctx.getBean(SetterInjectedController.class).sayHello());
         System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
